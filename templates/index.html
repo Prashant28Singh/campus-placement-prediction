@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Placement Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div id="home" class="section active">
+      <nav>
+        <div class="logo">PLACEMENT<br />PREDICTION</div>
+        <div class="nav-links">
+          <a href="#" class="active">HOME</a>
+          <a href="#">ABOUT</a>
+        </div>
+      </nav>
+      <div class="header">
+        <h1>WELCOME TO</h1>
+        <h1 class="highlight">PLACEMENT</h1>
+        <h1>PREDICTION APP</h1>
+        <p>
+          A Placement Prediction App is a tool designed to assist individuals,
+          usually students or job seekers, in predicting or estimating their
+          chances of securing a job or internship placement. This type of
+          application typically leverages various data points and algorithms to
+          provide users with insights into their potential success in the job
+          market.
+        </p>
+        <button onclick="showForm()" class="predict-btn">PREDICT</button>
+      </div>
+    </div>
+
+    <div id="form" class="section">
+      <div class="form-container">
+        <h2>Placement Prediction App</h2>
+        <form id="predictionForm" onsubmit="predictPlacement(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" required />
+            </div>
+            <div class="form-group">
+              <label for="branch">Branch</label>
+              <select id="branch" required>
+                <option value="CSE-AI">CSE-AI</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="ECE">ECE</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cgpa">CGPA</label>
+              <input
+                type="number"
+                id="cgpa"
+                min="0"
+                max="10"
+                step="0.1"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="skills">Skills</label>
+              <select id="skills" required>
+                <option value="Python ML/AI Data Science">
+                  Python ML/AI Data Science
+                </option>
+                <option value="Web Development">Web Development</option>
+                <option value="App Development">App Development</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="internship">Internship</label>
+              <select id="internship" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="hackathon">Hackathon</label>
+              <select id="hackathon" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="majorProjects">Major Projects</label>
+              <input type="number" id="majorProjects" min="0" required />
+            </div>
+            <div class="form-group">
+              <label for="miniProjects">Mini Projects</label>
+              <input type="number" id="miniProjects" min="0" required />
+            </div>
+            <div class="form-group">
+              <label for="communication">Communication Rating</label>
+              <input
+                type="number"
+                id="communication"
+                min="1"
+                max="5"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="percentage12">12th Percentage</label>
+              <input
+                type="number"
+                id="percentage12"
+                min="0"
+                max="100"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="percentage10">10th Percentage</label>
+              <input
+                type="number"
+                id="percentage10"
+                min="0"
+                max="100"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="backlog">Backlogs</label>
+              <input type="number" id="backlog" min="0" required />
+            </div>
+          </div>
+          <button type="submit" class="predict-btn">Predict Placement</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="result" class="section">
+      <div class="result-card">
+        <h2>Placement Prediction Result</h2>
+        <h3>Your Result is</h3>
+        <p id="prediction-text"></p>
+        <p id="salary-prediction"></p>
+        <!-- <button onclick="showForm()" class="predict-btn">PREDICT</button>
+<button onclick="showResult()" class="predict-btn">SHOW RESULT</button> -->
+
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+  </body>
+</html>

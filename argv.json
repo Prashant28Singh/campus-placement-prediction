@@ -1,0 +1,11 @@
+{
+  "locale": "en",
+
+	// Allows to disable crash reporting.
+	// Should restart the app if the value is changed.
+	"enable-crash-reporter": true,
+
+	// Unique id used for correlating crash reports sent from this instance.
+	// Do not edit this value.
+	"crash-reporter-id": "571f03eb-b963-43c7-986d-fa62d5fb568d"
+}
